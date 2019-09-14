@@ -17,9 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="dkV-t5-Uh7">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <segue destination="GwE-z1-7LF" kind="embed" identifier="SwiftChartEmbedSegue" id="mqq-iC-lrd"/>
+                            </connections>
+                        </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="68" id="Iae-my-tWA">
-                                <rect key="frame" x="0.0" y="28" width="414" height="68"/>
+                                <rect key="frame" x="0.0" y="251" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iae-my-tWA" id="U5B-8N-dkb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
@@ -61,6 +68,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITn-Ze-YxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="464" y="135"/>
+        </scene>
+        <!--Swift Chart View Controller-->
+        <scene sceneID="XR5-fx-NMv">
+            <objects>
+                <viewController id="GwE-z1-7LF" customClass="SwiftChartViewController" customModule="calorieTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HKP-0g-8Xa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKS-Ut-iDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-193"/>
         </scene>
     </scenes>
 </document>
