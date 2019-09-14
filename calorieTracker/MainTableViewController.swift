@@ -28,7 +28,6 @@ class MainTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,13 +44,11 @@ class MainTableViewController: UITableViewController {
         dateFormatter.timeStyle = .medium
         let date = dateFormatter.string(from: intake.date)
         
-        
-        cell.textLabel?.text = "Calories:\(intake.calories)" + " \(date)"
+        let intValue = Int(intake.calories)
+        cell.textLabel?.text = "Calories:\(intValue)" + " \(date)"
         return cell
     }
-    
-    
-    
+ 
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -68,13 +65,13 @@ class MainTableViewController: UITableViewController {
         }
         
         let submitAction = UIAlertAction(title: "SUBMIT", style: .default) { (_) in
-            let input = Int(alert.textFields![0].text!)
+            let input = Double(alert.textFields![0].text!)
             if let input = input {
                 self.modelController.createNewIntake(for: input)
                 
                 NotificationCenter.default.post(name: .caloriesInput, object: self)
             
-                self.swiftChartViewController.intake = input
+                self.updateData(for: input)
             }
         }
         
@@ -82,7 +79,10 @@ class MainTableViewController: UITableViewController {
         alert.addAction(submitAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-
+    }
+    
+    private func updateData(for input: Double) {
+        swiftChartViewController.data.append(input)
     }
 }
 

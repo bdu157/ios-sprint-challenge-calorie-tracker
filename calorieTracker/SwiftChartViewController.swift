@@ -11,56 +11,34 @@ import SwiftChart
 
 class SwiftChartViewController: UIViewController {
     
-    var intake: Int? {
-        didSet {
-            self.makeDatas()
-        }
-    }
+    var data: [Double] = []
     
     let chart = Chart(frame: CGRect(x: 0, y: 0, width: 380, height: 200))
     
-    let array: [Double] = [300, 400, 600, 100, 600, 100, 200]
-    
-    let series = ChartSeries([300, 400, 600, 100, 600, 100, 200, 100, 200, 500])
-    
     //var series: ChartSeries
+    //let data: [Double] = [0, 3, 5, 3, 3, 1, 1, 0, 5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(chart)
         chart.backgroundColor = .cyan
-        chart.add(series)
-        //observeShouldShowNewIntake()
+        observeShouldUpdateChart()
     }
     
     
-    func observeShouldShowNewIntake() {
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshViews(notification:)), name: .caloriesInput, object: nil)
+    func observeShouldUpdateChart() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateChart(notification:)), name: .caloriesInput, object: nil)
     }
     
-    @objc func refreshViews(notification: Notification) {
-//        self.chart.add(self.series)
-    }
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func updateChart(notification: Notification) {
+        DispatchQueue.main.async {
+            self.makeDatas()
+        }
     }
     
     private func makeDatas() {
-
-        guard let intake = intake else {return}
-
-    }
-    
-    
-    private func updateViews() {
-        //update chart
-        guard let intake = intake else {return}
-        
+        let series = ChartSeries(self.data)
+        self.chart.add(series)
     }
     
 }

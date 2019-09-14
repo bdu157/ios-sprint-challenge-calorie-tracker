@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 struct Tracker {
-    let calories: Int
+    let calories: Double
     let date: Date
     
-    init(calories: Int, date: Date = Date()) {
+    init(calories: Double, date: Date = Date()) {
         self.calories = calories
         self.date = date
     }

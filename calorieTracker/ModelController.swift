@@ -12,7 +12,7 @@ class ModelController {
     
     var intakes: [Tracker] = []
     
-    func createNewIntake(for calrories: Int) {
+    func createNewIntake(for calrories: Double) {
         let intake = Tracker(calories: calrories)
         intakes.append(intake)
     }
