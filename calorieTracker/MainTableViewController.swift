@@ -39,9 +39,18 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let intake = self.modelController.intakes[indexPath.row]
-        cell.textLabel?.text = "Calories: \(intake.calories)" + "   \(intake.date)"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        let date = dateFormatter.string(from: intake.date)
+        
+        
+        cell.textLabel?.text = "Calories:\(intake.calories)" + " \(date)"
         return cell
     }
+    
+    
     
     // MARK: - Navigation
     
