@@ -17,16 +17,27 @@ class SwiftChartViewController: UIViewController {
         }
     }
     
-    
-    
+    var datas: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let chart = Chart(frame: CGRect(x: 0, y: 0, width: 450, height: 200))
+        let chart = Chart(frame: CGRect(x: 0, y: 0, width: 380, height: 200))
         view.addSubview(chart)
         chart.backgroundColor = .cyan
+        let series = ChartSeries([100, 200, 300, 400, 300, 400, 400, 200])
+        chart.add(series)
+        
+        observeShouldShowNewIntake()
+    }
     
+    
+    func observeShouldShowNewIntake() {
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshViews(notification:)), name: .caloriesInput, object: nil)
+    }
+    
+    @objc func refreshViews(notification: Notification) {
+        view.reloadInputViews()
     }
 
     // MARK: - Navigation
