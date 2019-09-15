@@ -13,10 +13,11 @@ class ModelController {
     
     //var intakes: [Tracker] = []
     
-    func createNewIntake(for input: Double) {
-        let _ = Calories(calories: input)
+    func createNewIntake(for input: Double) -> Calories {
+        let object = Calories(calories: input)
         //intakes.append(intake)
         saveToPersistentStore()
+        return object
     }
     
 

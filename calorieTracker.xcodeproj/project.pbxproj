@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B11F420232E0DBF0004B052 /* Calories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B11F41E232E0DBF0004B052 /* Calories.xcdatamodeld */; };
 		0B11F422232E0F480004B052 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11F421232E0F480004B052 /* CoreDataStack.swift */; };
-		0B11F424232E104C0004B052 /* CaloriesRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11F423232E104C0004B052 /* CaloriesRepresentation.swift */; };
 		0B11F426232E10A00004B052 /* Calories+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11F425232E10A00004B052 /* Calories+Convenience.swift */; };
 		0B82AD66232C77F20094C372 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B82AD65232C77F20094C372 /* AppDelegate.swift */; };
 		0B82AD6B232C77F20094C372 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B82AD69232C77F20094C372 /* Main.storyboard */; };
@@ -25,7 +24,6 @@
 /* Begin PBXFileReference section */
 		0B11F41F232E0DBF0004B052 /* Calories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calories.xcdatamodel; sourceTree = "<group>"; };
 		0B11F421232E0F480004B052 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		0B11F423232E104C0004B052 /* CaloriesRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesRepresentation.swift; sourceTree = "<group>"; };
 		0B11F425232E10A00004B052 /* Calories+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calories+Convenience.swift"; sourceTree = "<group>"; };
 		0B82AD62232C77F20094C372 /* calorieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calorieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B82AD65232C77F20094C372 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 				0BC56039232C7D0A00B8B9EC /* Model.swift */,
 				0B11F41E232E0DBF0004B052 /* Calories.xcdatamodeld */,
 				0B11F421232E0F480004B052 /* CoreDataStack.swift */,
-				0B11F423232E104C0004B052 /* CaloriesRepresentation.swift */,
 				0B11F425232E10A00004B052 /* Calories+Convenience.swift */,
 			);
 			path = Models;
@@ -260,7 +257,6 @@
 				0BC5603A232C7D0A00B8B9EC /* Model.swift in Sources */,
 				0BC5603C232C80DF00B8B9EC /* ModelController.swift in Sources */,
 				0BC56038232C78DE00B8B9EC /* MainTableViewController.swift in Sources */,
-				0B11F424232E104C0004B052 /* CaloriesRepresentation.swift in Sources */,
 				0B11F420232E0DBF0004B052 /* Calories.xcdatamodeld in Sources */,
 				0BC5603F232C925000B8B9EC /* SwiftChartViewController.swift in Sources */,
 				0B82AD66232C77F20094C372 /* AppDelegate.swift in Sources */,

@@ -91,11 +91,11 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
         let submitAction = UIAlertAction(title: "SUBMIT", style: .default) { (_) in
             let input = Double(alert.textFields![0].text!)
             if let input = input {
-                self.modelController.createNewIntake(for: input)
+                let object = self.modelController.createNewIntake(for: input)
                 
                 NotificationCenter.default.post(name: .caloriesInput, object: self)
             
-                self.updateData(for: input)
+                self.updateData(for: object)
             }
         }
         
@@ -105,14 +105,12 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
         present(alert, animated: true, completion: nil)
     }
     
-    private func updateData(for input: Double) {
-       
-        swiftChartViewController.data.append(input)
-    
+    private func updateData(for object: Calories) {
+        swiftChartViewController.data.append(object.calories)
+//        if let object = fetchedResultsController.fetchedObjects {
+//            swiftChartViewController.data = object.map{$0.calories}
+//        }
     }
-    
-    
-    
     
     //MARK: - NSfetchresultcontrollerDelegate
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
