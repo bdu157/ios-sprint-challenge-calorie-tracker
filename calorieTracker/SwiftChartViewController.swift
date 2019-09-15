@@ -11,7 +11,11 @@ import SwiftChart
 
 class SwiftChartViewController: UIViewController {
     
-    var data: [Double] = []
+    var data: [Double] = [] {
+        didSet {
+            observeShouldUpdateChart()
+        }
+    }
     
     let chart = Chart(frame: CGRect(x: 0, y: 0, width: 380, height: 200))
     

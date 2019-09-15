@@ -31,6 +31,10 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     override func viewDidLoad() {
         super.viewDidLoad()
         observeShouldShowNewIntake()
+        if let object = fetchedResultsController.fetchedObjects {
+            NotificationCenter.default.post(name: .caloriesInput, object: self)
+            swiftChartViewController.data = object.map {$0.calories}
+        }
         
         //if fetchedResultsController.oject exists then assign array of calories [Double] to var data: [Double] = []  in SwiftChartViewController
     }
@@ -102,8 +106,13 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     private func updateData(for input: Double) {
+       
         swiftChartViewController.data.append(input)
+    
     }
+    
+    
+    
     
     //MARK: - NSfetchresultcontrollerDelegate
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
